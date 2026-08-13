@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import {type ComponentType, useEffect } from "react";
 import { getCookie } from "../config/cookies";
 import { useNavigate } from "react-router-dom";
 

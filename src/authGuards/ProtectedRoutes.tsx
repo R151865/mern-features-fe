@@ -1,5 +1,5 @@
-import { getCookie } from "../config/cookies"
-import {Navigate, Outlet} from "react-router-dom"
+// import { getCookie } from "../config/cookies"
+import { Outlet} from "react-router-dom"
 
 export default function ProtectedRoutes(){
 
