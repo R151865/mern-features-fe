@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 export interface DashboardFeature {
   id: string;
@@ -76,7 +76,17 @@ const features: DashboardFeature[] = [
 ];
 
 const Dashboard: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
+
+  const renderOverlay = ()=>{
+    return <div className="rounded-lg absolute inset-0 z-10 flex flex-col items-center justify-start pt-6 backdrop-blur-[1px] bg-gradient-to-b from-slate-900/40 via-slate-900/10 to-transparent">
+    <span className="rounded-full bg-slate-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white shadow-md border border-white/10">
+      Coming Soon
+    </span>
+  </div>
+
+  }
 
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
@@ -98,9 +108,11 @@ const Dashboard: React.FC = () => {
         {features.map((feature) => (
           <div
             key={feature.id}
-            onClick={() => navigate(feature.path)}
+            // onClick={() => navigate(feature.path)}
             className="group relative bg-white/80 backdrop-blur-md rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1"
           >
+        {renderOverlay()}
+
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-3xl p-2.5 bg-slate-100/80 rounded-2xl group-hover:bg-blue-50 transition-colors">
